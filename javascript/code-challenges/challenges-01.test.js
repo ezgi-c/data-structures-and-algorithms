@@ -51,6 +51,14 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 
 const allUpperCase = (arr) => {
   // Solution code here...
+  // declare array
+  const stringArray2 = [];
+  // Use `forEach` to loop over the input array
+  // Modify each string
+  // add the modified value into a local array
+  arr.forEach(string => stringArray2.push(string.toUpperCase()));
+  // Return the local array
+  return stringArray2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -65,10 +73,18 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 
 const greeting = (word) => {
   // Solution code here...
+  // modify string
+  // Return the string
+  return word.toUpperCase() + '!';
 };
 
 const speaker = (words, callback) => {
   // Solution code here...
+  const stringArray3 = [];
+  // Use `forEach` to build a new array of strings, each string modified by the callback.
+  words.forEach(word => stringArray3.push(callback(word)));
+  // Return the new array.
+  return stringArray3;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -89,10 +105,18 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
+  // push value into array
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
+  // invoke the callback function as many times as necessary
+  for (let i = 0; i < times; i++) {
+    callback(arr, num);
+  }
+  // Return the modified array
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -115,6 +139,16 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
+  // use forEach to populate your grocery list based on the store's inventory
+  //If the item is available, add it to your list
+  const groceryList = [];
+  availableItems.forEach(item => {
+    if (item.available === true){
+      groceryList.push(item.name);
+    }
+  });
+  // Return the final list
+  return groceryList;
 };
 
 /* ------------------------------------------------------------------------------------------------
