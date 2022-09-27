@@ -122,10 +122,7 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 
 const getStatName = (arr, minBaseStat) => {
   // Solution code here...
-  const statObjects=  arr.filter(stat => stat.baseStat > minBaseStat);
-  return statObjects.map(obj => {
-    return obj.stat.name;
-  });
+  return arr.filter(stat => stat.baseStat > minBaseStat).map(obj => obj.stat.name);
 };
 
 /* ------------------------------------------------------------------------------------------------
