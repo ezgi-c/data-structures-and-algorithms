@@ -111,20 +111,22 @@ Here is an example of the input:
 ];
 ------------------------------------------------------------------------------------------------ */
 
-const sortByPrice = (arr) => {
-  // Solution code here...
-  return arr.sort(compareAscendingValues);
-  function compareAscendingValues(a, b){
-    if (a.price < b.price) {
-      return -1;
-    }
-    if (a.price > b.price) {
-      return 1;
-    }
-    return 0;
-  }
-};
+// const sortByPrice = (arr) => {
+//   // Solution code here...
+//   return arr.sort(compareAscendingValues);
+//   function compareAscendingValues(a, b){
+//     if (a.price < b.price) {
+//       return -1;
+//     }
+//     if (a.price > b.price) {
+//       return 1;
+//     }
+//     return 0;
+//   }
+// };
 
+const sortByPrice = (arr) => {
+  return arr.sort((a,b) => a.price - b.price);
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
