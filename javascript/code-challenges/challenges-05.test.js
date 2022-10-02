@@ -144,10 +144,7 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
-  // let reversedString = str.reduce((acc, cVal) => {
 
-  // });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -201,7 +198,13 @@ const characters = [
 
 const countNumberOfChildren = (arr) => {
   // Solution code here...
+  let numberOfChildren = arr.reduce((acc, cVal) => {
+    acc+= cVal.children.length;
+    return acc;
+  }, 0);
+  return numberOfChildren;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -347,7 +350,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return the total number of children', () => {
     expect(countNumberOfChildren(characters)).toStrictEqual(14);
   });
