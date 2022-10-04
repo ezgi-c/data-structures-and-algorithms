@@ -144,7 +144,9 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-
+  return str.split('').reduce((acc, cVal) => {
+    return cVal + acc;
+  }, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -198,12 +200,14 @@ const characters = [
 
 const countNumberOfChildren = (arr) => {
   // Solution code here...
-  let numberOfChildren = arr.reduce((acc, cVal) => {
-    acc+= cVal.children.length;
-    return acc;
+  return arr.reduce((acc, cVal) => {
+    return cVal.children ? acc + cVal.children.length : acc;
+    // acc+= cVal.children.length;
+    // return acc;
   }, 0);
-  return numberOfChildren;
 };
+
+
 
 
 /* ------------------------------------------------------------------------------------------------
