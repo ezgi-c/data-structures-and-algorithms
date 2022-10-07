@@ -34,10 +34,10 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 
 ------------------------------------------------------------------------------------------------ */
 
-const appendTheEnd = (str) => {
-  // Solution code here...
-  return str + ' The end.';
-};
+const appendTheEnd = (str) => str + ' The end.';
+
+// Solution code here...
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -92,7 +92,7 @@ console.log(people[1].isAuthor) prints true
 
 const setStatusAsAuthor = (people) => {
   // Solution code here...
-  people.map(person => person.isAuthor = true);
+  people.forEach(person => person.isAuthor = true);
 };
 
 /* ------------------------------------------------------------------------------------------------
