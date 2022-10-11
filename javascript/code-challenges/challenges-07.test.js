@@ -133,6 +133,8 @@ const listFoods = (recipe) => {
   return result;
 };
 
+// return recipe.ingredients.map(str => str.slice(str.indexOf(' ', 3)));
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
