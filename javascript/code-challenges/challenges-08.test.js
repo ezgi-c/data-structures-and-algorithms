@@ -54,18 +54,20 @@ let characters = [
 
 const sortByChildren = (charArray) => {
   // Solution code here...
-  return charArray
-    .sort(compareAscendingValues)
-    .sort((a, b) => a.children.length - b.children.length);
+  // return charArray
+  //   .sort(compareAscendingValues)
+  //   .sort((a, b) => a.children.length - b.children.length);
   function compareAscendingValues(a, b) {
-    if (a.house < b.house) {
+    if (a.children.length < b.children.length) {
       return -1;
     }
-    if (a.house > b.house) {
+    if (a.children.length > b.children.length) {
       return 1;
+    } else {
+      return a.house > b.house ? 1 : -1;
     }
-    return 0;
   }
+  return charArray.sort(compareAscendingValues);
 };
 
 
@@ -124,8 +126,7 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
-  const pattern = /[A-Z]\w+/g;
-  return str.match(pattern);
+  return str.match(/[A-Z]\w+/g) || [];
 };
 
 
@@ -290,7 +291,7 @@ describe('Testing challenge 5', () => {
       'May',
     ]);
 
-    expect(isCapitalized('these words are all failures')).toStrictEqual(null);
+    expect(isCapitalized('these words are all failures')).toStrictEqual([]);
   });
 });
 
