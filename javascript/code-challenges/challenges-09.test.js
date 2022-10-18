@@ -8,13 +8,13 @@ using the 'reduce' method.
 
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
-const maxInArray = (arr) => {
+const maxInArray = (arr) =>
   // Solution code here...
-  return arr.reduce((acc, cVal) => {
+  arr.reduce((acc, cVal) => {
     acc = cVal > acc ? cVal : acc;
     return acc;
   }, []);
-};
+
 // got help from stackoverflow
 
 /* ------------------------------------------------------------------------------------------------
@@ -29,10 +29,10 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
   finalExam: true
 };
 
-const getCourseKeys = (obj) => {
+const getCourseKeys = (obj) =>
   // Solution code here...
-  return Object.keys(obj);
-};
+  Object.keys(obj);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -42,10 +42,10 @@ Write a function named checkValues that takes in an object and a value and retur
 
 ------------------------------------------------------------------------------------------------ */
 
-const checkValues = (obj, value) => {
+const checkValues = (obj, value) =>
   // Solution code here...
-  return Object.values(obj).includes(value) ? true : false;
-};
+  Object.values(obj).includes(value) ? true : false;
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -66,12 +66,19 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 ------------------------------------------------------------------------------------------------ */
 
-const updateNumbers = (obj) => {
+const updateNumbers = (obj) =>
   // Solution code here...
-  return Object.entries(obj);
-};
+  Object.entries(obj).map(entry => {
+    return entry[0] + ': ' + entry[1];
+  });
 
 
+// const updateNumbers = (obj) => {
+//   // Solution code here...
+//   return Object.entries(obj).map(entry => entry.join(': '));
+// };
+
+// Camilla's solution ^
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -125,6 +132,7 @@ const characters = [
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  arr.forEach(obj => houses.push(Object.values(obj.house).join('')));
   return houses;
 };
 
@@ -140,10 +148,12 @@ hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
-const hasChildrenValues = (arr, character) => {
+const hasChildrenValues = (arr, character) =>
   // Solution code here...
+  Object.values(arr).find(obj => obj.name === character && obj.children) ? true : false;
 
-};
+
+// Manuch's solution ^
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -165,6 +175,7 @@ Write a function named totalCharacters that takes in an array and returns the nu
 
 const totalCharacters = (arr) => {
   // Solution code here...
+  return arr.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
