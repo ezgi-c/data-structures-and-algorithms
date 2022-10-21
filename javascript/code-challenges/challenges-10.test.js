@@ -26,15 +26,11 @@ For example:
 
 return: 23
 ------------------------------------------------------------------------------------------------ */
-const findMax = (matrix) => {
+const findMax = (matrix) =>
   // Solution code here...
-  for (let i = 0; i < matrix.length; i++) {
-    i.reduce((acc, cVal) => {
-      acc = cVal > acc ? cVal : acc;
-      return acc;
-    }, []);
-  }
-};
+  Math.max(...matrix.map(idx => Math.max(...idx)));
+
+// from Ethan
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -52,8 +48,16 @@ return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
   // Solution code here...
+  let sum = 0;
+  for (let i=0; i<matrix.length; i++){
+    for (let j=0; j<matrix[i].length; j++){
+      sum += matrix[i][j];
+    }
+  }
+  return sum;
 };
 
+// from Andra
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -79,9 +83,16 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
   // Solution code here...
-
+  let sales = Array(hoursOpen.length).fill(0);
+  for (let i = 0; i < stores.length; i++) {
+    for (let j=0; j < sales.length; j ++){
+      sales[j] += stores[i][j];
+    }
+  }
+  return sales;
 };
 
+// from Manuch
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -94,8 +105,12 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
+  let newArr = [];
+  hours.forEach((hour, i) => newArr.push({sales: data[i] + ' cookies' , time: hour }));
+  return newArr;
 };
 
+//from Ethan
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -119,6 +134,9 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  return arr
+    .find(obj => obj.store === 'Pet store').items
+    .find(item => item.name === 'Treats').quantity;
 };
 
 /* ------------------------------------------------------------------------------------------------
