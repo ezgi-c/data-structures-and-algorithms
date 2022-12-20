@@ -6,7 +6,10 @@ See [setup instructions](https://codefellows.github.io/setup-guide/code-301/3-co
 
 ### Table of Contents
 
-[Code Challenge 1 - Reverse an Array](javascript/array-reverse/README.md)
+- [Code Challenge 1 - Reverse an Array](javascript/array/array-reverse/README.md)
+- [Code Challenge 2 - Insert and shift an array in middle at index](javascript/array/array-insert-shift/README.md)
+- [Code Challenge 3 - Binary search in a sorted 1D array](javascript/array/array-binary-search/README.md)
+- [Code Challenge 5 - Singly Linked Lists](javascript/linked-list/README.md)
 
 ## 301 Code Challenges
 
