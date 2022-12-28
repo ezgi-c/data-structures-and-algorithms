@@ -58,4 +58,44 @@ describe('Linked List', () => {
     expect(linkedList.toString()).toEqual('{ 7 } -> { 11 } -> { 8 } -> NULL');
   });
 
+  // Code Challenge 6:
+
+  it('can successfully add a node to the end of the linked list', () => {
+    linkedList.append(1);
+    linkedList.append(2);
+    expect(linkedList.head.value).toEqual(1);
+    expect(linkedList.head.next.value).toEqual(2);
+    expect(linkedList.head.next.next).toBeNull();
+  });
+
+  it('can successfully add multiple nodes to the end of a linked list', () => {
+    linkedList.append(1);
+    linkedList.append(2);
+    linkedList.append(3);
+    expect(linkedList.toString()).toEqual('{ 1 } -> { 2 } -> { 3 } -> NULL');
+  });
+
+  it('can successfully insert a node before a node located in the middle of a linked list', () => {
+    linkedList.append(1);
+    linkedList.append(2);
+    linkedList.append(3);
+    linkedList.insertBefore(2, 4);
+    expect(linkedList.toString()).toEqual('{ 1 } -> { 4 } -> { 2 } -> { 3 } -> NULL');
+  });
+
+  it('can successfully insert a node before the first node of a linked list', () => {
+    linkedList.append(1);
+    linkedList.append(2);
+    linkedList.insertBefore(1, 3);
+    expect(linkedList.toString()).toEqual('{ 3 } -> { 1 } -> { 2 } -> NULL');
+  });
+
+  it('can successfully insert after a node in the middle of the linked list', () => {
+    linkedList.append(1);
+    linkedList.append(2);
+    linkedList.append(3);
+    linkedList.insertAfter(2, 4);
+    expect(linkedList.toString()).toEqual('{ 1 } -> { 2 } -> { 4 } -> { 3 } -> NULL');
+  });
+
 });
