@@ -90,7 +90,17 @@ class LinkedList {
       current = current.next;
     }
   }
-
+  kthFromEnd(k) {
+    let arr = [];
+    let current = this.head;
+    while (current !== null) {
+      arr.push(current.value);
+      current = current.next;
+    }
+    while (k <= arr.length) {
+      return arr[arr.length - 1 - k];
+    }
+  }
 }
 
 module.exports = LinkedList;
