@@ -14,6 +14,8 @@ describe('Linked List', () => {
     linkedList = new LinkedList();
   });
 
+  // Code Challenge 5
+
   it('can successfully instantiate an empty linked list', () => {
     expect(linkedList.head).toBeNull();
   });
@@ -98,4 +100,38 @@ describe('Linked List', () => {
     expect(linkedList.toString()).toEqual('{ 1 } -> { 2 } -> { 4 } -> { 3 } -> NULL');
   });
 
+  // Code Challenge 7
+
+  it('it should return undefined if k is greater than the length of the linked list', () => {
+    linkedList.append(1);
+    linkedList.append(2);
+    linkedList.append(3);
+    expect(linkedList.kthFromEnd(4)).toBeUndefined();
+  });
+
+  it('should return the first node if k and the length of the list are the same', () => {
+    linkedList.append(1);
+    linkedList.append(2);
+    linkedList.append(3);
+    expect(linkedList.kthFromEnd(2)).toEqual(1);
+  });
+
+  it('should return undefined where k is not a positive integer', () => {
+    linkedList.append(1);
+    linkedList.append(2);
+    linkedList.append(3);
+    expect(linkedList.kthFromEnd(-1)).toBeUndefined();
+  });
+
+  it('should return value of the node where the linked list is of a size 1', () => {
+    linkedList.append(1);
+    expect(linkedList.kthFromEnd(0)).toEqual(1);
+  });
+
+  it('should return the correct element where k is not at the end, but somewhere in the middle of the linked list', () => {
+    linkedList.append(1);
+    linkedList.append(2);
+    linkedList.append(3);
+    expect(linkedList.kthFromEnd(1)).toEqual(2);
+  });
 });
