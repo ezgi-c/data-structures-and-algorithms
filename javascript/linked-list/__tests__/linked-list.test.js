@@ -1,7 +1,7 @@
 'use strict';
 
 // Require our linked list implementation
-const LinkedList = require('../index');
+const { LinkedList, zipLists } = require('../index');
 
 describe('Linked List', () => {
   let linkedList;
@@ -134,4 +134,40 @@ describe('Linked List', () => {
     linkedList.append(3);
     expect(linkedList.kthFromEnd(1)).toEqual(2);
   });
+
+});
+
+// Code Challenge 8
+
+describe('zipLists', () => {
+
+  it('should return a new linkedlist that consists of nodes of two lists alternating in order', () => {
+    let list1 = new LinkedList();
+    list1.append(1);
+    list1.append(2);
+    list1.append(3);
+
+    let list2 = new LinkedList();
+    list2.append(4);
+    list2.append(5);
+    list2.append(6);
+
+    let outputList = zipLists(list1, list2);
+    expect(outputList.toString()).toEqual('{ 1 } -> { 4 } -> { 2 } -> { 5 } -> { 3 } -> { 6 } -> NULL');
+  });
+
+  it('should work for linked lists with different lengths', () => {
+    let list1 = new LinkedList();
+    list1.append(1);
+    list1.append(2);
+    list1.append(3);
+
+    let list2 = new LinkedList();
+    list2.append(4);
+    list2.append(5);
+
+    let outputList = zipLists(list1, list2);
+    expect(outputList.toString()).toEqual('{ 1 } -> { 4 } -> { 2 } -> { 5 } -> { 3 } -> NULL');
+  });
+
 });
