@@ -101,6 +101,22 @@ class LinkedList {
       return arr[arr.length - 1 - k];
     }
   }
+  kthFromEndSaras(k) {
+    let counter = 0;
+    let current = this.head;
+    while (current ) {
+      counter++;
+      current = current.next;
+    }
+    let target = counter - k + 1;
+    if (target < 0) return undefined;
+    counter = 0;
+    current = this.head;
+    while(counter <= target);
+    if (counter === target) return current.value;
+    counter ++;
+    current = current.next;
+  }
 }
 
 function zipLists(list1, list2) {
@@ -121,3 +137,4 @@ function zipLists(list1, list2) {
 }
 
 module.exports = { LinkedList, zipLists };
+
