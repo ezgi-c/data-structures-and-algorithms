@@ -136,5 +136,34 @@ function zipLists(list1, list2) {
   return outputList;
 }
 
-module.exports = { LinkedList, zipLists };
+function reverseList(linkedList) {
+  let prev = null;
+  let current = linkedList.head;
+  let next = null;
+
+  while(current) {
+    next = current.next;
+    current.next = prev;
+    prev = current;
+    current = next;
+  }
+  return prev;
+}
+
+function isPalindrome(linkedList) {
+  const reversedList = reverseList(linkedList);
+  let current1 = linkedList.head;
+  let current2 = reversedList.head;
+
+  while(current1 && current2) {
+    if (current1.value !== current2.value) {
+      return false;
+    }
+    current1 = current1.next;
+    current2 = current2.next;
+  }
+  return true;
+}
+
+module.exports = { LinkedList, zipLists, reverseList, isPalindrome };
 
