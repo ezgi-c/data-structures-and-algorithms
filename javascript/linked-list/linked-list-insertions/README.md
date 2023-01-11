@@ -27,7 +27,6 @@ Write tests to prove the following functionality:
 - Can successfully insert after a node in the middle of the linked list
 - Can successfully insert a node after the last node of the linked list
 
-
 ## Approach & Efficiency
 
 I added the new methods to the existing Linked Lists class from provious challenge. Also implemented the testing within the existing tests document.
