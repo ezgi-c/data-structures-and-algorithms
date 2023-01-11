@@ -11,6 +11,10 @@ See [setup instructions](https://codefellows.github.io/setup-guide/code-301/3-co
 - [Code Challenge 3 - Binary search in a sorted 1D array](javascript/array/array-binary-search/README.md)
 - [Code Challenge 5 - Singly Linked Lists](javascript/linked-list/singly-linked-lists/README.md)
 - [Code Challenge 6 - Linked List Insertions](javascript/linked-list/linked-list-insertions/README.md)
+- [Code Challenge 7 - kth value from the end of a linked list](./javascript/linked-list/linked-list-kth/README.md)
+- [Code Challenge 8 - Zip two linked lists](javascript/linked-list/linked-list-zip/README.md)
+- [Code Challenge 9 - Mock Interviews](javascript/linked-list/challenge9/README.md)
+- [Code Challenge 10 - Stacks and Queues](javascript/linked-list/stack-and-queue/README.md)
 
 ## 301 Code Challenges
 
