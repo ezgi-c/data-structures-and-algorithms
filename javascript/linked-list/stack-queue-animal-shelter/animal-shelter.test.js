@@ -32,4 +32,12 @@ describe('class AnimalShelter', () => {
     expect(shelter.dequeue()).toBe('cat');
     expect(shelter.dequeue()).toBe('dog');
   });
+
+  test('cannot double dip', () => {
+    shelter.enqueue('cat');
+    shelter.enqueue('dog');
+    shelter.enqueue('cat');
+    expect(shelter.dequeue('cat')).toBe('cat');
+    expect(shelter.dequeue()).toBe('dog');
+  });
 });
