@@ -1,8 +1,4 @@
 
-//  const movies = sortYear(Movies);
-//  sortYear() takes in Movies array
-// sorts movie objects by property year in descending order
-
 const sortYear = (movies) => {
   return movies.sort((a,b) => b.year - a.year);
 };
