@@ -1,7 +1,6 @@
 class Node {
   constructor(value) {
     this.value = value;
-
   }
 }
 
@@ -19,8 +18,7 @@ class Graph {
   }
 
   add_node(value) {
-    const node = new Node(value);
-    return node;
+    return new Node(value);
   }
 
   add_edge(from, to, value) {
@@ -40,7 +38,7 @@ class Graph {
     // Neighbors are the other ends of the edges
     const edges = this.get_edges(node);
 
-    return edges.map(edge => edge.to);
+    return edges.map((edge) => edge.to);
   }
 
   get_edges(node) {
@@ -48,14 +46,15 @@ class Graph {
     return this.edges.get(node);
   }
 
+  // need to fix this. this doesnt return the 'to' nodes
   get_nodes() {
     return Array.from(this.edges.keys());
   }
 
+  // same as above
   get_size() {
     return Array.from(this.edges.keys()).length;
   }
-
 }
 
 module.exports = { Graph, Node, Edge };
