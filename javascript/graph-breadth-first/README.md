@@ -27,6 +27,7 @@ Output:
 Once you’ve achieved a working solution, define a new method that accepts two nodes as input and uses your traversal algorithm to determine if a path exists between the two nodes.
 
 ## Whiteboard Process
+
 ![whiteboard](whiteboard.png)
 
 <!-- ## Approach & Efficiency -->
