@@ -1,7 +1,6 @@
 class Node {
   constructor(value) {
     this.value = value;
-
   }
 }
 
@@ -40,7 +39,7 @@ class Graph {
     // Neighbors are the other ends of the edges
     const edges = this.get_edges(node);
 
-    return edges.map(edge => edge.to);
+    return edges.map((edge) => edge.to);
   }
 
   get_edges(node) {
@@ -56,6 +55,22 @@ class Graph {
     return Array.from(this.edges.keys()).length;
   }
 
+  breadthFirst(startNode) {
+    let traversal = [];
+    let visited = new Set();
+    let todo = [startNode];
+
+    while (todo.length > 0) {
+      let current = todo.shift();
+      if (!visited.has(current)) {
+        traversal.push(current);
+        visited.add(current);
+        const neighbors = this.get_neighbors(current);
+        neighbors.forEach((neighbor) => todo.push(neighbor));
+      }
+    }
+    return traversal;
+  }
 }
 
 module.exports = { Graph, Node, Edge };
