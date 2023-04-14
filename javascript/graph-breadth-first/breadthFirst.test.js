@@ -3,6 +3,7 @@ const { Graph } = require('../graph/graph');
 
 test('breadthFirst returns the correct traversal starting at bathroom', () => {
   const graph = new Graph();
+
   const hallway = graph.add_node();
   const kitchen = graph.add_node();
   const livingRoom = graph.add_node();
